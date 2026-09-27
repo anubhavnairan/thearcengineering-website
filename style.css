@@ -14,3 +14,86 @@ body.lightbox-open{overflow:hidden}
 /* Portfolio and contact polish */
 .projects-intro{display:flex;justify-content:space-between;align-items:end;gap:30px;margin:0 0 22px}.projects-intro .gallery-title{margin:0}.projects-intro p{max-width:700px;color:var(--muted);margin:7px 0 0;font-size:14px}.text-link{font-family:Montserrat,sans-serif;font-weight:800;color:var(--navy);white-space:nowrap}.text-link:hover{color:var(--orange)}.project-cta{margin-top:30px;padding:24px 28px;border-radius:18px;background:#eef6fb;border:1px solid #d5e8f4;display:flex;align-items:center;justify-content:space-between;gap:20px}.project-cta strong,.project-cta span{display:block}.project-cta strong{font-family:Montserrat;color:var(--navy);font-size:18px}.project-cta span{color:var(--muted);font-size:13px;margin-top:4px}.contact-points a{text-decoration:underline;text-underline-offset:3px}.contact-points a:hover{color:#fff}.btn-map{display:block;background:#eef3f7;color:var(--navy);margin-top:10px;text-align:center}.btn-map:hover{background:#dfeaf1}.phone-link{text-decoration:underline;text-underline-offset:3px}
 @media(max-width:700px){.projects-intro{display:block}.projects-intro .text-link{display:inline-block;margin-top:8px}.project-cta{display:block}.project-cta .btn{margin-top:18px;width:100%;text-align:center}}
+/* Clean photographic feature panels: crop out brochure-embedded text fragments */
+.visual-card,.feature-img{position:relative;overflow:hidden}
+.visual-card img{
+  object-position:right center;
+  transform:scale(1.20);
+  transform-origin:center;
+}
+.feature-hvac .feature-img img{
+  object-position:right bottom;
+  transform:scale(1.22);
+  transform-origin:center;
+}
+.feature-fire .feature-img img{
+  object-position:center center;
+  transform:scale(1.10);
+  transform-origin:center;
+}
+.systems .feature-img img{
+  object-position:center bottom;
+  transform:scale(1.18);
+  transform-origin:center;
+}
+
+/* Fire image: cover the remaining printed FIRE WATER lettering on the riser */
+.feature-fire .feature-img:before{
+  content:'';
+  position:absolute;
+  z-index:2;
+  left:63%;
+  top:0;
+  width:12%;
+  height:48%;
+  background:linear-gradient(90deg,#b51610,#e32618 45%,#b51610);
+  border-radius:4px;
+}
+
+/* Electrical/plumbing image: remove brochure lettering at both outer edges */
+.systems .feature-img:before{
+  content:'';
+  position:absolute;
+  z-index:2;
+  left:0;
+  top:0;
+  width:15%;
+  height:100%;
+  background:linear-gradient(90deg,#f6f9fc 0%,rgba(246,249,252,.97) 70%,rgba(246,249,252,0) 100%);
+}
+.systems .feature-img:after{
+  content:'';
+  position:absolute;
+  z-index:2;
+  right:0;
+  top:0;
+  width:28%;
+  height:20%;
+  background:linear-gradient(180deg,rgba(232,237,240,.99),rgba(232,237,240,.92),rgba(232,237,240,0));
+}
+
+@media(max-width:700px){
+  .visual-card img{
+    transform:scale(1.24);
+    object-position:right center;
+  }
+  .feature-hvac .feature-img img{
+    transform:scale(1.28);
+    object-position:right bottom;
+  }
+  .feature-fire .feature-img img{
+    transform:scale(1.12);
+    object-position:center center;
+  }
+  .feature-fire .feature-img:before{
+    left:61%;
+    width:14%;
+    height:50%;
+  }
+  .systems .feature-img img{
+    transform:scale(1.24);
+    object-position:center bottom;
+  }
+  .systems .feature-img:before{width:17%}
+  .systems .feature-img:after{width:31%;height:22%}
+}

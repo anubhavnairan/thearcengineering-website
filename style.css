@@ -108,3 +108,30 @@ body.lightbox-open{overflow:hidden}
   .systems .feature-img:before{width:17%}
   .systems .feature-img:after{width:31%;height:22%}
 }
+
+
+/* Redesigned project portfolio */
+.portfolio-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:20px;margin-top:28px}
+.portfolio-card{grid-column:span 4;background:#fff;border:1px solid #dfe8ee;border-radius:22px;overflow:hidden;box-shadow:0 10px 30px rgba(6,59,99,.08);transition:transform .25s ease,box-shadow .25s ease}
+.portfolio-card:hover{transform:translateY(-6px);box-shadow:0 20px 45px rgba(6,59,99,.15)}
+.portfolio-feature{grid-column:span 6}
+.portfolio-image{height:245px;position:relative;overflow:hidden;background:#eaf1f5}
+.portfolio-feature .portfolio-image{height:300px}
+.portfolio-image img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .45s ease}
+.portfolio-card:hover .portfolio-image img{transform:scale(1.05)}
+.portfolio-type{position:absolute;left:16px;top:16px;padding:7px 12px;border-radius:999px;background:rgba(255,255,255,.94);color:var(--navy);font:700 11px Montserrat,sans-serif;letter-spacing:.04em;box-shadow:0 5px 15px rgba(0,0,0,.12)}
+.portfolio-copy{position:relative;padding:20px 20px 22px}
+.portfolio-number{position:absolute;right:18px;top:18px;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;font:700 12px Montserrat,sans-serif}
+.portfolio-copy h3{color:var(--navy);font-size:20px;margin:0 48px 7px 0}
+.portfolio-copy p{color:var(--muted);font-size:13px;margin:0}
+@media(max-width:950px){
+  .portfolio-card,.portfolio-feature{grid-column:span 6}
+  .portfolio-image,.portfolio-feature .portfolio-image{height:240px}
+}
+@media(max-width:700px){
+  .portfolio-grid{grid-template-columns:1fr;gap:16px}
+  .portfolio-card,.portfolio-feature{grid-column:span 1}
+  .portfolio-image,.portfolio-feature .portfolio-image{height:230px}
+  .portfolio-copy{padding:18px}
+  .portfolio-type{left:12px;top:12px}
+}

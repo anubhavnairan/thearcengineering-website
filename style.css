@@ -21,6 +21,17 @@ body.lightbox-open{overflow:hidden}
   transform:scale(1.20);
   transform-origin:center;
 }
+.visual-card:before{
+  content:'';
+  position:absolute;
+  z-index:2;
+  left:0;
+  top:0;
+  width:18%;
+  height:24%;
+  background:linear-gradient(90deg,#f6f9fc 0%,#f6f9fc 72%,rgba(246,249,252,0) 100%);
+  pointer-events:none;
+}
 .feature-hvac .feature-img img{
   object-position:right bottom;
   transform:scale(1.22);
